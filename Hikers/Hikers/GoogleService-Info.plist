@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>141371615663-f8m2ti85sp4ovmq3g0b7bucg7v8g5mj3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.141371615663-f8m2ti85sp4ovmq3g0b7bucg7v8g5mj3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCHsk8q14812V31gg2F4jf9yZ8l4IGiup0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>141371615663</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.vi66r.Hikers</string>
+	<key>PROJECT_ID</key>
+	<string>hikers-ad1ba</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hikers-ad1ba.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:141371615663:ios:6aed1580d986a5d1</string>
+	<key>DATABASE_URL</key>
+	<string>https://hikers-ad1ba.firebaseio.com</string>
+</dict>
+</plist>

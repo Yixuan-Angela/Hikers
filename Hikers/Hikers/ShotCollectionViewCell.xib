@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ShotCollectionViewCell" customModule="Hikers" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="3JT-n8-cpM" userLabel="image">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="3JT-n8-cpM" secondAttribute="height" multiplier="8:3" id="Q2q-n0-LkJ"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBb-6M-dg0">
+                        <rect key="frame" x="0.0" y="150" width="400" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9nW-HN-GtH">
+                                <rect key="frame" x="10" y="0.5" width="380" height="29.5"/>
+                                <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="24"/>
+                                <color key="textColor" red="0.0977349653840065" green="0.0977320596575737" blue="0.09773370623588562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9nW-HN-GtH" secondAttribute="trailing" constant="10" id="8xb-m1-oTp"/>
+                            <constraint firstAttribute="centerY" secondItem="9nW-HN-GtH" secondAttribute="centerY" constant="10" id="dQf-Z9-fiI"/>
+                            <constraint firstItem="9nW-HN-GtH" firstAttribute="leading" secondItem="gBb-6M-dg0" secondAttribute="leading" constant="10" id="qhJ-WP-NxK"/>
+                        </constraints>
+                    </view>
+                    <view alpha="0.050000000000000003" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6d-Oe-bNk" userLabel="Segment View">
+                        <rect key="frame" x="0.0" y="150" width="400" height="1"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="8SU-cS-QFK"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.39479022790055252" green="0.39479022790055252" blue="0.39479022790055252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gBb-6M-dg0" firstAttribute="top" secondItem="3JT-n8-cpM" secondAttribute="bottom" id="06H-GB-tYj"/>
+                <constraint firstItem="3JT-n8-cpM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5Sm-ld-jJF"/>
+                <constraint firstAttribute="trailing" secondItem="3JT-n8-cpM" secondAttribute="trailing" id="UZr-oK-vGo"/>
+                <constraint firstItem="s6d-Oe-bNk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZgV-sk-H36"/>
+                <constraint firstAttribute="trailing" secondItem="s6d-Oe-bNk" secondAttribute="trailing" id="dbv-AN-cnN"/>
+                <constraint firstAttribute="bottom" secondItem="gBb-6M-dg0" secondAttribute="bottom" id="ef9-Zr-smz"/>
+                <constraint firstItem="gBb-6M-dg0" firstAttribute="top" secondItem="s6d-Oe-bNk" secondAttribute="bottom" constant="-1" id="fky-6h-Ggm"/>
+                <constraint firstItem="gBb-6M-dg0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qix-lw-yo4"/>
+                <constraint firstItem="3JT-n8-cpM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uFt-ll-gEX"/>
+                <constraint firstAttribute="trailing" secondItem="gBb-6M-dg0" secondAttribute="trailing" id="wVM-X8-zgz"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="3JT-n8-cpM" id="VQQ-Li-TP3"/>
+                <outlet property="shotName" destination="9nW-HN-GtH" id="CdH-ic-8bh"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="sample" width="200" height="150"/>
+    </resources>
+</document>
