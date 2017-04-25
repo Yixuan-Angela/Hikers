@@ -16,6 +16,10 @@ class BaseViewController: UIViewController {
         
         var controllerArray : [UIViewController] = []
         
+        var add: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(launchAdd))
+        add.tintColor = UIColor.white
+        
+        
         self.navigationItem.title = "Hikers"
         
         self.navigationController?.isNavigationBarHidden = false
@@ -24,6 +28,7 @@ class BaseViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationItem.rightBarButtonItem = add
         
         let popularShot = ShotCollectionViewController(nibName: "ShotCollectionViewController", bundle: nil)
         popularShot.title = "Nearby"
@@ -74,6 +79,15 @@ class BaseViewController: UIViewController {
         pageMenu?.didMove(toParentViewController: self)
     }
 
+    
+    func launchAdd(){
+        print("launching add dialogue")
+        
+        let addController = addHike(nibName: "addHike", bundle: nil)
+        self.present(addController, animated: true, completion: nil)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

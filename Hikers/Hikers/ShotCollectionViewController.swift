@@ -11,12 +11,16 @@ import SDWebImage
 
 let reuseIdentifier_Shot = "ShotCollectionViewCell"
 
-class ShotCollectionViewController: UICollectionViewController{
+class ShotCollectionViewController: UICollectionViewController, UISearchBarDelegate{
     fileprivate var shots:[articleLink] = [articleLink]() {
         didSet{
             self.collectionView?.reloadData()
         }
     }
+    
+    private var filteredShots:[articleLink] = [articleLink]()
+    
+    private var isSearching = false
     
     fileprivate var cellWidth:CGFloat = 0.0
     fileprivate var cellHeight:CGFloat = 0.0
@@ -24,14 +28,97 @@ class ShotCollectionViewController: UICollectionViewController{
     fileprivate let cellVerticalMargin:CGFloat = 20.0
     fileprivate let cellHorizontalMargin:CGFloat = 20.0
     
+    private var mySearchBar: UISearchBar!
+    private var myLabel : UILabel!
+    
     var API_URL = Config.SHOT_URL
 
     
     var shotPages = 1
     
     override func viewDidLoad() {
+        
+        
+        // make UISearchBar instance
+        mySearchBar = UISearchBar()
+        mySearchBar.delegate = self
+        mySearchBar.frame = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: self.view.frame.width, height: 80))
+        mySearchBar.layer.position = CGPoint(x: self.view.bounds.width/2, y: 0)
+        
+//        // add shadow
+//        mySearchBar.layer.shadowColor = UIColor.black.cgColor
+//        mySearchBar.layer.shadowOpacity = 0.5
+//        mySearchBar.layer.masksToBounds = false
+        
+        // hide cancel button
+        mySearchBar.showsCancelButton = true
+        
+        // hide bookmark button
+        mySearchBar.showsBookmarkButton = false
+        
+        // set Default bar status.
+        mySearchBar.searchBarStyle = UISearchBarStyle.default
+        
+        // set title
+        mySearchBar.prompt = "Title"
+        
+        // set placeholder
+        mySearchBar.placeholder = "Search for a trail!"
+        
+        // change the color of cursol and cancel button.
+        mySearchBar.tintColor = UIColor.white
+        
+        // hide the search result.
+        mySearchBar.showsSearchResultsButton = false
+        
+        // add searchBar to the view.
+        self.view.addSubview(mySearchBar)
+        
+//        // make UITextField
+//        myLabel = UILabel(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 200, height: 30)))
+//        myLabel.center = CGPoint(x: self.view.frame.width/2, y: self.view.frame.height/2)
+//        myLabel.text = ""
+//        myLabel.layer.borderWidth = 1.0
+//        myLabel.layer.borderColor = UIColor.gray.cgColor
+//        myLabel.layer.cornerRadius = 10.0
+////
+////        // add the label to the view.
+//        self.view.addSubview(myLabel)
+//        self.navigationController?.navigationBar.addSubview(myLabel)
+        
+        
         super.viewDidLoad()
     }
+    
+    
+    // called whenever text is changed.
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        myLabel.text = searchText
+    }
+    
+    // called when cancel button is clicked
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+//        myLabel.text = ""
+        mySearchBar.text = ""
+        filteredShots.removeAll()
+        isSearching = false
+    }
+    
+    // called when search button is clicked
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = true
+        mySearchBar.text = "Search for a trail!"
+        print("triggered")
+        
+        for places in self.shots{
+            if places.title?.caseInsensitiveCompare(mySearchBar.text!) == .orderedSame{
+                filteredShots.append(places)
+            }
+        }
+        
+        self.view.endEditing(true)
+    }
+    
     
     func loadShots(){
         self.collectionView!.backgroundColor = UIColor.hexStr("f5f5f5", alpha: 1.0)
@@ -68,15 +155,25 @@ class ShotCollectionViewController: UICollectionViewController{
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if isSearching {
+            return filteredShots.count
+        }
         return shots.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier_Shot, for: indexPath) as! ShotCollectionViewCell
         
-        let shot = shots[indexPath.row]
+        var shot: articleLink?
         
-        cell.imageView.sd_setImage(with: URL(string: shot.thumb!)!)
+        if isSearching {
+            shot = filteredShots[indexPath.row]
+        } else {
+            shot = shots[indexPath.row]
+        }
+        
+        
+        cell.imageView.sd_setImage(with: URL(string: shot!.thumb!)!)
 //        cell.imageView.layer.shadowColor = UIColor.blackColor().CGColor
 //        cell.imageView.layer.shadowOffset = CGSize(width: 0, height: 10)
 //        cell.imageView.layer.shadowOpacity = 0.8
@@ -86,7 +183,7 @@ class ShotCollectionViewController: UICollectionViewController{
 //        cell.designerIcon.layer.cornerRadius = cell.designerIcon.bounds.width / 2
 //        cell.designerIcon.layer.masksToBounds = true
         
-        cell.shotName.text = shot.title
+        cell.shotName.text = shot!.title
 //        cell.designerName.text = shot.designerName
 //        cell.viewLabel.text = String(shot.shotCount)
         

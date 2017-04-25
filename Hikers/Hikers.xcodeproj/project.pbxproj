@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		68EC34AA7654A1270334AC7A /* Pods_Hikers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C9BF948D286C58498F92AC /* Pods_Hikers.framework */; };
+		E42CA1221EA540DF00A67FA3 /* addHike.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42CA1201EA540DF00A67FA3 /* addHike.swift */; };
+		E42CA1231EA540DF00A67FA3 /* addHike.xib in Resources */ = {isa = PBXBuildFile; fileRef = E42CA1211EA540DF00A67FA3 /* addHike.xib */; };
 		E4CF80DF1E92949D00B00153 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF80DE1E92949D00B00153 /* AppDelegate.swift */; };
 		E4CF80E41E92949D00B00153 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4CF80E21E92949D00B00153 /* Main.storyboard */; };
 		E4CF80E91E92949D00B00153 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CF80E81E92949D00B00153 /* Assets.xcassets */; };
@@ -62,6 +64,8 @@
 		A020B28320072A9C8EAC5BE6 /* Pods-Hikers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hikers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hikers/Pods-Hikers.debug.xcconfig"; sourceTree = "<group>"; };
 		B1C9BF948D286C58498F92AC /* Pods_Hikers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hikers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DB0277B8DF88878BADA884 /* Pods-Hikers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hikers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hikers/Pods-Hikers.release.xcconfig"; sourceTree = "<group>"; };
+		E42CA1201EA540DF00A67FA3 /* addHike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addHike.swift; sourceTree = "<group>"; };
+		E42CA1211EA540DF00A67FA3 /* addHike.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addHike.xib; sourceTree = "<group>"; };
 		E4CF80DB1E92949D00B00153 /* Hikers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hikers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CF80DE1E92949D00B00153 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4CF80E31E92949D00B00153 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				E4CF812F1E9297CB00B00153 /* BaseViewController.swift */,
 				E4CF81311E9297DC00B00153 /* DetailViewController.swift */,
 				E4CF81331E9297E000B00153 /* DetailViewController.xib */,
+				E42CA1201EA540DF00A67FA3 /* addHike.swift */,
+				E42CA1211EA540DF00A67FA3 /* addHike.xib */,
 				E4CF81351E9297F100B00153 /* networking.swift */,
 				E4CF81361E9297F100B00153 /* redditNetworking.swift */,
 				E4CF81371E9297F100B00153 /* linksBuilder.swift */,
@@ -336,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42CA1231EA540DF00A67FA3 /* addHike.xib in Resources */,
 				E4CF81221E92979D00B00153 /* ShotCollectionViewCell.xib in Resources */,
 				E4CF80EC1E92949D00B00153 /* LaunchScreen.storyboard in Resources */,
 				E4CF80E91E92949D00B00153 /* Assets.xcassets in Resources */,
@@ -427,6 +434,7 @@
 				E4CF81301E9297CB00B00153 /* BaseViewController.swift in Sources */,
 				E4CF813A1E9297F100B00153 /* networking.swift in Sources */,
 				E4CF81321E9297DC00B00153 /* DetailViewController.swift in Sources */,
+				E42CA1221EA540DF00A67FA3 /* addHike.swift in Sources */,
 				E4CF81121E92977A00B00153 /* Config.swift in Sources */,
 				E4CF80DF1E92949D00B00153 /* AppDelegate.swift in Sources */,
 				E4CF81141E92977F00B00153 /* Color.swift in Sources */,
