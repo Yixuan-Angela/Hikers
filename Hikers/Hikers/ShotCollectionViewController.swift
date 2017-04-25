@@ -12,7 +12,7 @@ import SDWebImage
 let reuseIdentifier_Shot = "ShotCollectionViewCell"
 
 class ShotCollectionViewController: UICollectionViewController, UISearchBarDelegate{
-    fileprivate var shots:[articleLink] = [articleLink]() {
+    private var shots:[articleLink] = [articleLink]() {
         didSet{
             self.collectionView?.reloadData()
         }
@@ -102,20 +102,39 @@ class ShotCollectionViewController: UICollectionViewController, UISearchBarDeleg
         mySearchBar.text = ""
         filteredShots.removeAll()
         isSearching = false
+        self.collectionView?.reloadData()
     }
     
     // called when search button is clicked
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         isSearching = true
-        mySearchBar.text = "Search for a trail!"
+        
         print("triggered")
         
         for places in self.shots{
             if places.title?.caseInsensitiveCompare(mySearchBar.text!) == .orderedSame{
+                print("\n\n\n\n\n\n\n\n")
+                print(mySearchBar.text!)
+                print("\n\n\n\n\n\n\n\n")
                 filteredShots.append(places)
+            } else {
+                print("\n\n")
+                print(mySearchBar.text!)
+                print(places.title!)
+                print("\n\n")
             }
         }
         
+        if filteredShots.count == 0 {
+            isSearching = false
+            let alert = UIAlertController(title: "Whoops", message: "Couldn't find anything with that name", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        mySearchBar.text = ""
+        
+        self.collectionView?.reloadData()
         self.view.endEditing(true)
     }
     
@@ -131,6 +150,9 @@ class ShotCollectionViewController: UICollectionViewController, UISearchBarDeleg
         redditNetworking().getNewsFromReddit { (listings: [articleLink]) in
             print("operation complete")
             self.shots = listings
+            print("\n\n\n\n\n\n\n\n")
+            print(self.shots.count)
+            print("\n\n\n\n\n\n\n\n")
         }
         
         let refreshControl = UIRefreshControl()
