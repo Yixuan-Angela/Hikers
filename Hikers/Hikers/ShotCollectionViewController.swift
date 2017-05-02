@@ -285,7 +285,7 @@ class ShotCollectionViewController: UICollectionViewController, UISearchBarDeleg
 //        let _ = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier_Shot, for: indexPath) as! ShotCollectionViewCell
 //        let shot = shots[indexPath.row]
 //        let vc = ImageModalViewController(nibName: "ImageModalViewController", bundle: nil)
-////        var vc = DetailViewController(nibName: "DetailViewController", bundle: nil)
+       let vc = DetailViewController(nibName: "DetailViewController", bundle: nil)
 //        vc.modalPresentationStyle = .fullScreen
 //        vc.modalTransitionStyle = .crossDissolve
 ////        vc.parentNavigationController = parentNavigationController
@@ -310,7 +310,7 @@ class ShotCollectionViewController: UICollectionViewController, UISearchBarDeleg
 //            }
 //        }
 //        
-//        parent?.present(vc, animated: true, completion: nil)
+        parent?.present(vc, animated: true, completion: nil)
 ////        self.parentNavigationController.pushViewController(vc, animated: true)
     }
 }
