@@ -17,7 +17,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-- Swift 3: use v1.0.2
+- Swift 3: use current
 - Swift 2: use v0.2.0
 
 ## Installation
@@ -48,7 +48,7 @@ pod 'MRArticleViewController'
   ```swift
   override func viewDidLoad() {
       // required
-      image = UIImage(named: "pulpfiction")!
+      imageView.image = UIImage(named: "pulpfiction")!
       headline = "LA gangsters witness supposed \"Divine Intervention\""
       author = "Quentin Tarantino"
       date = NSDate()
@@ -69,11 +69,11 @@ pod 'MRArticleViewController'
   autoColored = true
   
   // If you don't like the autoColor feature, you can also color each component individually
-  backgroundColor = UIColor.blackColor()
-  headlineColor = UIColor.yellowColor()
-  authorColor = UIColor.orangeColor()
-  dateColor = UIColor.grayColor()
-  bodyColor = UIColor.grayColor()
+  backgroundColor = UIColor.black
+  headlineColor = UIColor.yellow
+  authorColor = UIColor.orange
+  dateColor = UIColor.gray
+  bodyColor = UIColor.gray
   
   super.viewDidLoad()
   ```
@@ -89,6 +89,13 @@ This library leverages the algorithm from [UIImageColors](https://github.com/jat
 * and the secondary color to the author.
 
 Note that UIImageColors is not a dependency, the code has just been ported into this library.
+
+## To-do
+
+Want a feature you don't see? Submit an issue and I'll add it to the to-do list, or hack it yourself and submit a pull request.
+
+- [ ] Add new styles
+- [ ] Swift package manager
 
 ## Author
 

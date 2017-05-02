@@ -295,12 +295,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = vi66r;
 				TargetAttributes = {
 					E4CF80DA1E92949D00B00153 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = V4X533PGY2;
 						ProvisioningStyle = Automatic;
 					};
 					E4CF80F11E92949E00B00153 = {
@@ -399,7 +398,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F0658B30083D685E61CD12F6 /* [CP] Copy Pods Resources */ = {
@@ -596,8 +595,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A020B28320072A9C8EAC5BE6 /* Pods-Hikers.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V4X533PGY2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Hikers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vi66r.Hikers;
@@ -610,8 +610,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E1DB0277B8DF88878BADA884 /* Pods-Hikers.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V4X533PGY2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Hikers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vi66r.Hikers;
