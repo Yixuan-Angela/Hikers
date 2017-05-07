@@ -281,7 +281,19 @@ class ShotCollectionViewController: UICollectionViewController, UISearchBarDeleg
         return UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
     }
     
+    var valueToPass: UIImage!
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        
+        if (segue.identifier == "yourSegueIdentifer") {
+            // initialize new view controller and cast it as your view controller
+            let viewController = segue.destination as! DetailViewController
+            // your new view controller should have property that will store passed value
+            viewController.passedShotImage = valueToPass
+            }
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
 //        let _ = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier_Shot, for: indexPath) as! ShotCollectionViewCell
 //        let shot = shots[indexPath.row]
 //        let vc = ImageModalViewController(nibName: "ImageModalViewController", bundle: nil)
@@ -295,6 +307,7 @@ class ShotCollectionViewController: UICollectionViewController, UISearchBarDeleg
 //        
 //        let downloadQueue = DispatchQueue(label: "com.naoyashiga.processdownload", attributes: [])
 //        
+        
 //        downloadQueue.async{
 //            let data = try? Data(contentsOf: URL(string: shot.imageUrl)!)
 //            
@@ -305,11 +318,18 @@ class ShotCollectionViewController: UICollectionViewController, UISearchBarDeleg
 //                image = UIImage(data: data!)!
 //            }
 //            
-//            DispatchQueue.main.async{
+//            Dispa1tchQueue.main.async{
 //                vc.imageView.image = image
 //            }
 //        }
-//        
+        // Get Cell Label
+        //let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
+    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier_Shot, for: indexPath) as! ShotCollectionViewCell
+        
+        valueToPass = cell.imageView.image
+        //performSegue(withIdentifier: "yourSegueIdentifer", sender: self)
+
         parent?.present(vc, animated: true, completion: nil)
 ////        self.parentNavigationController.pushViewController(vc, animated: true)
     }
